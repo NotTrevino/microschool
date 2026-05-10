@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enrollment | VKTlearn Learning Academy</title>
+  <meta name="description" content="Apply for enrollment at VKTlearn — Texas private microschool with small live classes and personalized K–12 instruction." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    :root {
+      --navy:#1c2f4a; --navy-lt:#2e4870; --cream:#f9f6f1; --white:#ffffff;
+      --sage:#6d8f72; --sage-lt:#e8f0e9; --gold:#b8843a; --gold-lt:#f6eddf;
+      --text:#1c2f4a; --muted:#5a6a78; --border:#ddd8d0;
+      --serif:'Cormorant Garamond',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+      --shadow:0 2px 20px rgba(28,47,74,.07); --shadow-md:0 4px 32px rgba(28,47,74,.1);
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--sans); color:var(--text); background:var(--cream); font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased; }
+    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
+    .section { padding:96px 0; }
+    .section--alt { background:var(--white); }
+    .section--navy { background:var(--navy); color:var(--white); }
+    .section--sage { background:var(--sage-lt); }
+    .label { display:inline-block; font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--sage); margin-bottom:12px; }
+    .label--white { color:rgba(255,255,255,.7); }
+    h1,h2,h3,h4 { font-family:var(--serif); line-height:1.15; font-weight:500; }
+    h1 { font-size:clamp(2.4rem,4.5vw,3.6rem); }
+    h2 { font-size:clamp(2rem,3.5vw,2.8rem); }
+    h3 { font-size:1.45rem; }
+    h4 { font-size:1.15rem; }
+    p { color:var(--muted); line-height:1.8; }
+    p.lead { font-size:1.1rem; max-width:600px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 28px; border-radius:4px; font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:.03em; text-decoration:none; cursor:pointer; border:none; transition:all .2s ease; }
+    .btn-primary { background:var(--navy); color:#fff; }
+    .btn-primary:hover { background:var(--navy-lt); transform:translateY(-1px); box-shadow:var(--shadow-md); }
+    .btn-outline { background:transparent; color:var(--navy); border:1.5px solid var(--navy); }
+    .btn-outline:hover { background:var(--navy); color:#fff; }
+    .btn-gold { background:var(--gold); color:#fff; }
+    .btn-gold:hover { background:#a37330; transform:translateY(-1px); }
+    .btn-outline-white { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.5); }
+    .btn-outline-white:hover { background:rgba(255,255,255,.12); }
+    .arrow { display:inline-block; transition:transform .2s; }
+    .btn:hover .arrow { transform:translateX(3px); }
+    nav { position:sticky; top:0; z-index:100; background:rgba(249,246,241,.96); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; height:68px; max-width:1100px; margin:0 auto; padding:0 24px; }
+    .nav-logo { font-family:var(--serif); font-size:1.4rem; font-weight:600; color:var(--navy); text-decoration:none; }
+    .nav-logo span { color:var(--sage); }
+    .nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+    .nav-links a { font-size:14px; color:var(--muted); text-decoration:none; transition:color .15s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--navy); font-weight:500; }
+    .nav-cta { display:flex; gap:10px; }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; border:none; background:none; padding:4px; }
+    .hamburger span { display:block; width:22px; height:2px; background:var(--navy); border-radius:2px; }
+    @media(max-width:768px){ .nav-links,.nav-cta{display:none;} .hamburger{display:flex;} }
+    .page-hero { padding:80px 0 64px; background:var(--cream); border-bottom:1px solid var(--border); }
+    .page-hero h1 { margin-bottom:16px; color:var(--navy); }
+    .accent-line { width:40px; height:3px; background:var(--sage); border-radius:2px; margin-bottom:20px; }
+    .section-header { margin-bottom:56px; }
+    .section-header h2 { margin-bottom:14px; }
+    .section-header p { max-width:520px; }
+    .section-header--center { text-align:center; }
+    .section-header--center p { margin:0 auto; }
+
+    .steps-bar { display:flex; align-items:center; gap:0; margin-bottom:48px; }
+    .step-item { flex:1; text-align:center; position:relative; }
+    .step-item::after { content:''; position:absolute; top:20px; left:50%; width:100%; height:2px; background:var(--border); z-index:0; }
+    .step-item:last-child::after { display:none; }
+    .step-circle {
+      width:40px; height:40px; border-radius:50%; background:var(--white); border:2px solid var(--sage);
+      color:var(--sage); font-family:var(--serif); font-size:1.1rem; font-weight:600;
+      display:flex; align-items:center; justify-content:center; margin:0 auto 10px; position:relative; z-index:1;
+    }
+    .step-item.active .step-circle { background:var(--sage); color:#fff; }
+    .step-label { font-size:13px; color:var(--muted); font-weight:500; }
+    @media(max-width:600px){ .step-label{font-size:11px;} .step-circle{width:32px;height:32px;font-size:1rem;} }
+
+    .form-card { background:var(--white); border:1px solid var(--border); border-radius:16px; padding:40px; max-width:720px; margin:0 auto; }
+    @media(max-width:600px){ .form-card{padding:24px 20px;} }
+    .form-group { margin-bottom:24px; }
+    .form-group label { display:block; font-size:13px; font-weight:500; color:var(--navy); margin-bottom:6px; letter-spacing:.02em; }
+    .form-group input, .form-group select, .form-group textarea {
+      width:100%; padding:12px 14px; border:1.5px solid var(--border); border-radius:6px;
+      font-family:var(--sans); font-size:14px; color:var(--text); background:var(--white);
+      transition:border-color .2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline:none; border-color:var(--sage);
+    }
+    .form-group textarea { resize:vertical; min-height:100px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    @media(max-width:600px){ .form-row{grid-template-columns:1fr;} }
+    .radio-group { display:flex; flex-wrap:wrap; gap:12px; margin-top:6px; }
+    .radio-option {
+      display:flex; align-items:center; gap:8px; padding:10px 16px; border:1.5px solid var(--border);
+      border-radius:6px; cursor:pointer; font-size:14px; color:var(--muted); transition:all .2s;
+    }
+    .radio-option:hover { border-color:var(--sage); }
+    .radio-option input { width:auto; accent-color:var(--sage); }
+    .radio-option.selected { border-color:var(--sage); background:var(--sage-lt); color:var(--navy); }
+
+    .info-box { background:var(--sage-lt); border-left:4px solid var(--sage); border-radius:0 8px 8px 0; padding:20px 24px; margin-bottom:40px; }
+    .info-box p { font-size:14px; color:var(--navy); }
+
+    footer { background:var(--navy); color:rgba(255,255,255,.7); padding:64px 0 32px; border-top:1px solid rgba(255,255,255,.07); }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:48px; }
+    .footer-logo { font-family:var(--serif); font-size:1.4rem; color:#fff; font-weight:600; margin-bottom:14px; }
+    .footer-logo span { color:var(--sage); }
+    .footer-brand p { font-size:14px; line-height:1.7; }
+    .footer-col h5 { font-family:var(--sans); font-size:12px; font-weight:500; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.4); margin-bottom:16px; }
+    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .footer-col a { font-size:14px; color:rgba(255,255,255,.65); text-decoration:none; transition:color .15s; }
+    .footer-col a:hover { color:#fff; }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.1); padding-top:28px; display:flex; align-items:center; justify-content:space-between; font-size:13px; color:rgba(255,255,255,.4); flex-wrap:wrap; gap:12px; }
+    @media(max-width:768px){ .footer-grid{grid-template-columns:1fr 1fr;} .footer-brand{grid-column:1/-1;} }
+    @media(max-width:480px){ .footer-grid{grid-template-columns:1fr;} }
+    .cta-inner { display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; }
+    .cta-text h2 { color:#fff; margin-bottom:10px; }
+    .cta-text p { color:rgba(255,255,255,.7); max-width:480px; }
+    .cta-btns { display:flex; gap:12px; flex-wrap:wrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VKTlearn<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="tuition.html">Tuition</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-outline" style="padding:10px 20px;font-size:13px;">Schedule a Call</a>
+      <a href="enrollment.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Apply Now</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="label">Enrollment</div>
+    <h1>Begin Your Child's<br><em style="font-style:italic;color:var(--sage);">Journey With Us</em></h1>
+    <p class="lead" style="margin-top:16px;">Spots are limited — each live class is capped at 8 students. Fill out the form below and we'll be in touch within 24 hours.</p>
+  </div>
+</section>
+
+<!-- ENROLLMENT STEPS -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <div class="accent-line" style="margin:0 auto 20px;"></div>
+      <div class="label">How It Works</div>
+      <h2>Simple Steps to Enroll</h2>
+    </div>
+    <div class="steps-bar">
+      <div class="step-item active">
+        <div class="step-circle">1</div>
+        <div class="step-label">Submit Inquiry</div>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">2</div>
+        <div class="step-label">Discovery Call</div>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">3</div>
+        <div class="step-label">Student Fit Meeting</div>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">4</div>
+        <div class="step-label">Begin Learning</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p><strong>Enrollment is open for the 2025–26 school year.</strong> Live program spots fill on a first-come basis. Curriculum access is available year-round.</p>
+    </div>
+
+    <div class="form-card">
+      <h3 style="margin-bottom:6px;">Enrollment Inquiry</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:28px;">Tell us about your family and we'll reach out to schedule your free discovery call.</p>
+
+      <form action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="_blank">
+        <h4 style="margin-bottom:16px;font-size:1rem;color:var(--navy);">Parent / Guardian Information</h4>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="parent-first">First Name *</label>
+            <input type="text" id="parent-first" name="entry.XXXXX" required />
+          </div>
+          <div class="form-group">
+            <label for="parent-last">Last Name *</label>
+            <input type="text" id="parent-last" name="entry.XXXXX" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="parent-email">Email Address *</label>
+            <input type="email" id="parent-email" name="entry.XXXXX" required />
+          </div>
+          <div class="form-group">
+            <label for="parent-phone">Phone Number *</label>
+            <input type="tel" id="parent-phone" name="entry.XXXXX" required />
+          </div>
+        </div>
+
+        <h4 style="margin:32px 0 16px;font-size:1rem;color:var(--navy);">Student Information</h4>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="student-first">Student First Name *</label>
+            <input type="text" id="student-first" name="entry.XXXXX" required />
+          </div>
+          <div class="form-group">
+            <label for="student-last">Student Last Name *</label>
+            <input type="text" id="student-last" name="entry.XXXXX" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="student-grade">Current Grade Level *</label>
+            <select id="student-grade" name="entry.XXXXX" required>
+              <option value="">Select grade</option>
+              <option value="K">Kindergarten</option>
+              <option value="1">1st Grade</option>
+              <option value="2">2nd Grade</option>
+              <option value="3">3rd Grade</option>
+              <option value="4">4th Grade</option>
+              <option value="5">5th Grade</option>
+              <option value="6">6th Grade</option>
+              <option value="7">7th Grade</option>
+              <option value="8">8th Grade</option>
+              <option value="9">9th Grade</option>
+              <option value="10">10th Grade</option>
+              <option value="11">11th Grade</option>
+              <option value="12">12th Grade</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="student-age">Student Age *</label>
+            <input type="number" id="student-age" name="entry.XXXXX" min="4" max="19" required />
+          </div>
+        </div>
+
+        <h4 style="margin:32px 0 16px;font-size:1rem;color:var(--navy);">Program Interest</h4>
+        <div class="form-group">
+          <label>Which program are you interested in? *</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="entry.XXXXX" value="Curriculum Access" required />
+              K–12 Curriculum Access
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="entry.XXXXX" value="General Ed Live" />
+              General Education Live
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="entry.XXXXX" value="Special Ed Live" />
+              Special Education Live
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="entry.XXXXX" value="Unsure" />
+              Not Sure Yet
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="goals">What are your goals for your child's education this year?</label>
+          <textarea id="goals" name="entry.XXXXX" placeholder="Tell us about your child's learning style, any specific needs, and what you're hoping to find..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="referral">How did you hear about VKTlearn?</label>
+          <input type="text" id="referral" name="entry.XXXXX" placeholder="Google, social media, friend, etc." />
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">
+          Submit Inquiry <span class="arrow">→</span>
+        </button>
+        <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:14px;">We'll respond within 24 hours to schedule your free discovery call.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--navy">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <div class="label label--white">Prefer to Talk First?</div>
+        <h2>Schedule a Free Discovery Call</h2>
+        <p>Not ready to fill out a form? No problem. Book a 20-minute call and we'll answer all your questions — no pressure, no commitment.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-outline-white">Schedule a Call</a>
+        <a href="faq.html" class="btn btn-gold">Read FAQ <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">VKTlearn<span>.</span></div>
+        <p>A Texas private microschool offering personalized, live instruction for grades K–12. Built around your child, not the average.</p>
+        <p style="margin-top:12px;font-size:13px;">Texas Certified Teacher · TEKS Aligned · Enrolling Now</p>
+      </div>
+      <div class="footer-col">
+        <h5>School</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="tuition.html">Tuition</a></li>
+          <li><a href="enrollment.html">Enrollment</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Parent Handbook</a></li>
+          <li><a href="#">School Calendar</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:info@VKTlearntx.org">info@VKTlearntx.org</a></li>
+          <li><a href="mailto:admissions@VKTlearntx.org">admissions@VKTlearntx.org</a></li>
+          <li><a href="contact.html">Schedule a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 VKTlearn Learning Academy. All rights reserved.</span>
+      <span>Texas Private School · Serving Texas Families</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const ham=document.querySelector('.hamburger'),links=document.querySelector('.nav-links'),cta=document.querySelector('.nav-cta');
+  if(ham)ham.addEventListener('click',()=>{const o=links.style.display==='flex';links.style.cssText=o?'':'display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--cream);padding:20px 24px;gap:16px;border-bottom:1px solid var(--border);z-index:99';cta.style.cssText=o?'':'display:flex;flex-direction:column;padding:0 24px 20px;position:absolute;top:'+(68+links.querySelectorAll('li').length*44)+'px;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--border);z-index:99';});
+  document.querySelectorAll('.radio-option input').forEach(r=>{r.addEventListener('change',function(){document.querySelectorAll('.radio-option').forEach(o=>o.classList.remove('selected'));this.closest('.radio-option').classList.add('selected');});});
+</script>
+</body>
+</html>

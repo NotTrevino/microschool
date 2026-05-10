@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | VKTlearn Learning Academy</title>
+  <meta name="description" content="Answers to common questions about VKTlearn — Texas private microschool, TEKS-aligned curriculum, live instruction, and enrollment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    :root {
+      --navy:#1c2f4a; --navy-lt:#2e4870; --cream:#f9f6f1; --white:#ffffff;
+      --sage:#6d8f72; --sage-lt:#e8f0e9; --gold:#b8843a; --gold-lt:#f6eddf;
+      --text:#1c2f4a; --muted:#5a6a78; --border:#ddd8d0;
+      --serif:'Cormorant Garamond',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+      --shadow:0 2px 20px rgba(28,47,74,.07); --shadow-md:0 4px 32px rgba(28,47,74,.1);
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--sans); color:var(--text); background:var(--cream); font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased; }
+    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
+    .section { padding:96px 0; }
+    .section--alt { background:var(--white); }
+    .section--navy { background:var(--navy); color:var(--white); }
+    .section--sage { background:var(--sage-lt); }
+    .label { display:inline-block; font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--sage); margin-bottom:12px; }
+    .label--white { color:rgba(255,255,255,.7); }
+    h1,h2,h3,h4 { font-family:var(--serif); line-height:1.15; font-weight:500; }
+    h1 { font-size:clamp(2.4rem,4.5vw,3.6rem); }
+    h2 { font-size:clamp(2rem,3.5vw,2.8rem); }
+    h3 { font-size:1.45rem; }
+    h4 { font-size:1.15rem; }
+    p { color:var(--muted); line-height:1.8; }
+    p.lead { font-size:1.1rem; max-width:600px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 28px; border-radius:4px; font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:.03em; text-decoration:none; cursor:pointer; border:none; transition:all .2s ease; }
+    .btn-primary { background:var(--navy); color:#fff; }
+    .btn-primary:hover { background:var(--navy-lt); transform:translateY(-1px); box-shadow:var(--shadow-md); }
+    .btn-outline { background:transparent; color:var(--navy); border:1.5px solid var(--navy); }
+    .btn-outline:hover { background:var(--navy); color:#fff; }
+    .btn-gold { background:var(--gold); color:#fff; }
+    .btn-gold:hover { background:#a37330; transform:translateY(-1px); }
+    .btn-outline-white { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.5); }
+    .btn-outline-white:hover { background:rgba(255,255,255,.12); }
+    .arrow { display:inline-block; transition:transform .2s; }
+    .btn:hover .arrow { transform:translateX(3px); }
+    nav { position:sticky; top:0; z-index:100; background:rgba(249,246,241,.96); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; height:68px; max-width:1100px; margin:0 auto; padding:0 24px; }
+    .nav-logo { font-family:var(--serif); font-size:1.4rem; font-weight:600; color:var(--navy); text-decoration:none; }
+    .nav-logo span { color:var(--sage); }
+    .nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+    .nav-links a { font-size:14px; color:var(--muted); text-decoration:none; transition:color .15s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--navy); font-weight:500; }
+    .nav-cta { display:flex; gap:10px; }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; border:none; background:none; padding:4px; }
+    .hamburger span { display:block; width:22px; height:2px; background:var(--navy); border-radius:2px; }
+    @media(max-width:768px){ .nav-links,.nav-cta{display:none;} .hamburger{display:flex;} }
+    .page-hero { padding:80px 0 64px; background:var(--cream); border-bottom:1px solid var(--border); }
+    .page-hero h1 { margin-bottom:16px; color:var(--navy); }
+    .accent-line { width:40px; height:3px; background:var(--sage); border-radius:2px; margin-bottom:20px; }
+    .section-header { margin-bottom:56px; }
+    .section-header h2 { margin-bottom:14px; }
+    .section-header p { max-width:520px; }
+
+    .faq-list { max-width:800px; margin:0 auto; }
+    .faq-item { border-bottom:1px solid var(--border); }
+    .faq-question {
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      width:100%; padding:24px 0; background:none; border:none;
+      font-family:var(--sans); font-size:1.05rem; font-weight:500; color:var(--navy);
+      text-align:left; cursor:pointer; transition:color .2s;
+    }
+    .faq-question:hover { color:var(--sage); }
+    .faq-icon { width:24px; height:24px; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:transform .3s; }
+    .faq-icon svg { width:14px; height:14px; stroke:var(--sage); fill:none; stroke-width:2.5; stroke-linecap:round; }
+    .faq-item.open .faq-icon { transform:rotate(45deg); }
+    .faq-answer {
+      max-height:0; overflow:hidden; transition:max-height .35s ease, padding .35s ease;
+    }
+    .faq-item.open .faq-answer { max-height:400px; padding-bottom:24px; }
+    .faq-answer p { font-size:15px; color:var(--muted); }
+    .faq-answer p + p { margin-top:12px; }
+
+    .faq-category { margin-bottom:48px; }
+    .faq-category:last-child { margin-bottom:0; }
+    .faq-category h3 { font-size:1.15rem; color:var(--navy); margin-bottom:8px; letter-spacing:.02em; }
+    .faq-category > p { font-size:14px; margin-bottom:20px; }
+
+    footer { background:var(--navy); color:rgba(255,255,255,.7); padding:64px 0 32px; border-top:1px solid rgba(255,255,255,.07); }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:48px; }
+    .footer-logo { font-family:var(--serif); font-size:1.4rem; color:#fff; font-weight:600; margin-bottom:14px; }
+    .footer-logo span { color:var(--sage); }
+    .footer-brand p { font-size:14px; line-height:1.7; }
+    .footer-col h5 { font-family:var(--sans); font-size:12px; font-weight:500; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.4); margin-bottom:16px; }
+    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .footer-col a { font-size:14px; color:rgba(255,255,255,.65); text-decoration:none; transition:color .15s; }
+    .footer-col a:hover { color:#fff; }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.1); padding-top:28px; display:flex; align-items:center; justify-content:space-between; font-size:13px; color:rgba(255,255,255,.4); flex-wrap:wrap; gap:12px; }
+    @media(max-width:768px){ .footer-grid{grid-template-columns:1fr 1fr;} .footer-brand{grid-column:1/-1;} }
+    @media(max-width:480px){ .footer-grid{grid-template-columns:1fr;} }
+    .cta-inner { display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; }
+    .cta-text h2 { color:#fff; margin-bottom:10px; }
+    .cta-text p { color:rgba(255,255,255,.7); max-width:480px; }
+    .cta-btns { display:flex; gap:12px; flex-wrap:wrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VKTlearn<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="tuition.html">Tuition</a></li>
+      <li><a href="faq.html" class="active">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-outline" style="padding:10px 20px;font-size:13px;">Schedule a Call</a>
+      <a href="enrollment.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Apply Now</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="label">FAQ</div>
+    <h1>Questions?<br><em style="font-style:italic;color:var(--sage);">We've Got Answers</em></h1>
+    <p class="lead" style="margin-top:16px;">Everything you need to know about VKTlearn — from curriculum and class size to enrollment and what a typical day looks like.</p>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+
+    <div class="faq-category">
+      <h3>About the School</h3>
+      <p style="font-size:14px;color:var(--muted);">Who we are and how we operate.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            Is VKTlearn an accredited school?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>VKTlearn operates as a Texas private school. We follow Texas Essential Knowledge and Skills (TEKS) standards and are led by a Texas-certified teacher. While we are not publicly accredited through a traditional accrediting body, our curriculum alignment and instruction meet rigorous academic standards designed to prepare students for success in high school, college, and beyond.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is this a homeschool program?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>No — VKTlearn is a private microschool, not a homeschool curriculum provider (though our asynchronous curriculum access can be used by homeschool families). Our live programs provide structured, teacher-led instruction with set schedules, attendance, and academic accountability — more like a traditional school, just much smaller.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What grades do you serve?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>We serve students in grades K–12 across all programs — from our self-paced curriculum access to our live general education and special education tracks.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Where are you located?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>VKTlearn is based in Texas and serves families throughout the state. Our live programs are conducted online, so students can join from anywhere in Texas with a reliable internet connection.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3>Programs & Curriculum</h3>
+      <p style="font-size:14px;color:var(--muted);">What your child will learn and how.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            What curriculum do you use?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Our curriculum is TEKS-aligned across all subjects and grade levels. We draw from high-quality instructional resources and teacher-created materials to ensure every lesson is rigorous, relevant, and tailored to the students in each class. For our asynchronous program, students access structured, self-paced lessons in Math, ELA, Science, and Social Studies.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you follow TEKS standards?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Every lesson, assessment, and learning objective is aligned with the Texas Essential Knowledge and Skills (TEKS) standards. This ensures your child receives an education that is both rigorous and recognized within the state of Texas.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Are classes live or pre-recorded?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Our General Education and Special Education programs are fully live and interactive — your child will see their teacher and classmates in real time, ask questions, and participate in discussions. Our Curriculum Access program is self-paced and asynchronous, with no live component.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What does a typical school day look like?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>In our General Education Live program, students meet Monday through Thursday for 3 hours of live instruction daily (15 hours/week), covering core subjects with breaks built in. Our Special Education Live program meets 4 days per week for 2 hours daily. Both programs include structured lessons, guided practice, and time for questions — all in a small group of 8 students or fewer.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How many students are in each class?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Every live class is capped at <strong>8 students maximum</strong>. This is not a goal — it is a hard limit. Small classes are the foundation of everything we do, and we will not exceed this number under any circumstances.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3>Technology & Requirements</h3>
+      <p style="font-size:14px;color:var(--muted);">What you'll need to get started.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            What technology does my child need?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Students need a reliable internet connection, a computer or tablet with a camera and microphone, and a quiet space to learn. We use common video conferencing tools that work on most devices. A printer is helpful but not required for the asynchronous curriculum.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you provide textbooks or materials?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>All curriculum materials are provided digitally through our learning platform. For live programs, teachers may recommend simple household supplies for hands-on activities, but there are no expensive textbook purchases required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3>Tuition & Payment</h3>
+      <p style="font-size:14px;color:var(--muted);">Pricing, plans, and what's included.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            How does tuition work?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>We offer flexible payment options including monthly, semester, and annual plans. Curriculum access subscriptions are billed monthly or yearly. Live program tuition is set per semester. Contact us for current live program rates and available payment plans.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is there a discount for multiple children?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. For our asynchronous curriculum access, additional children are just $4/month or $40/year per extra child. We also offer family pricing for live programs — ask about this during your discovery call.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What's included in tuition?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Live program tuition includes all live instruction, curriculum access, assessments, grading, weekly parent updates, and quarterly conferences. Curriculum access subscriptions include full platform access, self-paced lessons, and parent progress tracking. There are no hidden fees.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3>Enrollment & Getting Started</h3>
+      <p style="font-size:14px;color:var(--muted);">How to join and what to expect.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            How do I enroll my child?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Start by filling out our <a href="enrollment.html" style="color:var(--navy);font-weight:500;">enrollment inquiry form</a>. We'll contact you within 24 hours to schedule a free 20-minute discovery call. If it feels like a good fit, we'll schedule a student fit meeting and then complete the enrollment paperwork. Many families are ready to start within the same week.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can my child start mid-year?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Our asynchronous curriculum access is available year-round. For live programs, we accept rolling enrollment when spots are available. We'll work with your family to ensure a smooth transition regardless of when you join.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What if VKTlearn isn't the right fit?
+            <span class="faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>We want every family to feel confident in their choice. That's why we start with a no-pressure discovery call — so you can ask questions and get a real sense of whether we're right for your child before committing. If you enroll and realize it's not working, we'll work with you to make it right.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--navy">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <div class="label label--white">Still Have Questions?</div>
+        <h2>Let's Talk Directly</h2>
+        <p>Every family is different. Schedule a free call and we'll answer whatever's on your mind — no script, no pressure.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-outline-white">Schedule a Call</a>
+        <a href="enrollment.html" class="btn btn-gold">Apply for Enrollment <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">VKTlearn<span>.</span></div>
+        <p>A Texas private microschool offering personalized, live instruction for grades K–12. Built around your child, not the average.</p>
+        <p style="margin-top:12px;font-size:13px;">Texas Certified Teacher · TEKS Aligned · Enrolling Now</p>
+      </div>
+      <div class="footer-col">
+        <h5>School</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="tuition.html">Tuition</a></li>
+          <li><a href="enrollment.html">Enrollment</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Parent Handbook</a></li>
+          <li><a href="#">School Calendar</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:info@VKTlearntx.org">info@VKTlearntx.org</a></li>
+          <li><a href="mailto:admissions@VKTlearntx.org">admissions@VKTlearntx.org</a></li>
+          <li><a href="contact.html">Schedule a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 VKTlearn Learning Academy. All rights reserved.</span>
+      <span>Texas Private School · Serving Texas Families</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const ham=document.querySelector('.hamburger'),links=document.querySelector('.nav-links'),cta=document.querySelector('.nav-cta');
+  if(ham)ham.addEventListener('click',()=>{const o=links.style.display==='flex';links.style.cssText=o?'':'display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--cream);padding:20px 24px;gap:16px;border-bottom:1px solid var(--border);z-index:99';cta.style.cssText=o?'':'display:flex;flex-direction:column;padding:0 24px 20px;position:absolute;top:'+(68+links.querySelectorAll('li').length*44)+'px;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--border);z-index:99';});
+  document.querySelectorAll('.faq-question').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement;const open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!open)item.classList.add('open');});});
+</script>
+</body>
+</html>
