@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | VKTlearn Learning Academy</title>
+  <meta name="description" content="Meet the certified Texas teacher behind VKTlearn — why we started, what we believe, and how we work with every family." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:#1c2f4a; --navy-lt:#2e4870; --cream:#f9f6f1; --white:#ffffff;
+      --sage:#6d8f72; --sage-lt:#e8f0e9; --gold:#b8843a; --gold-lt:#f6eddf;
+      --text:#1c2f4a; --muted:#5a6a78; --border:#ddd8d0;
+      --serif:'Cormorant Garamond',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+      --shadow:0 2px 20px rgba(28,47,74,.07); --shadow-md:0 4px 32px rgba(28,47,74,.1);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:var(--sans); color:var(--text); background:var(--cream); font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased; }
+    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
+    .section { padding:96px 0; }
+    .section--alt { background:var(--white); }
+    .section--navy { background:var(--navy); color:var(--white); }
+    .section--sage { background:var(--sage-lt); }
+    .label { display:inline-block; font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--sage); margin-bottom:12px; }
+    .label--white { color:rgba(255,255,255,.7); }
+    h1,h2,h3,h4 { font-family:var(--serif); line-height:1.15; font-weight:500; }
+    h1 { font-size:clamp(2.4rem,4.5vw,3.6rem); }
+    h2 { font-size:clamp(2rem,3.5vw,2.8rem); }
+    h3 { font-size:1.45rem; }
+    h4 { font-size:1.15rem; }
+    p { color:var(--muted); line-height:1.8; }
+    p.lead { font-size:1.1rem; max-width:600px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 28px; border-radius:4px; font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:.03em; text-decoration:none; cursor:pointer; border:none; transition:all .2s ease; }
+    .btn-primary { background:var(--navy); color:#fff; }
+    .btn-primary:hover { background:var(--navy-lt); transform:translateY(-1px); box-shadow:var(--shadow-md); }
+    .btn-outline { background:transparent; color:var(--navy); border:1.5px solid var(--navy); }
+    .btn-outline:hover { background:var(--navy); color:#fff; }
+    .btn-gold { background:var(--gold); color:#fff; }
+    .btn-gold:hover { background:#a37330; transform:translateY(-1px); }
+    .btn-outline-white { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.5); }
+    .btn-outline-white:hover { background:rgba(255,255,255,.12); }
+    .arrow { display:inline-block; transition:transform .2s; }
+    .btn:hover .arrow { transform:translateX(3px); }
+    nav { position:sticky; top:0; z-index:100; background:rgba(249,246,241,.96); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; height:68px; max-width:1100px; margin:0 auto; padding:0 24px; }
+    .nav-logo { font-family:var(--serif); font-size:1.4rem; font-weight:600; color:var(--navy); text-decoration:none; }
+    .nav-logo span { color:var(--sage); }
+    .nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+    .nav-links a { font-size:14px; color:var(--muted); text-decoration:none; transition:color .15s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--navy); font-weight:500; }
+    .nav-cta { display:flex; gap:10px; }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; border:none; background:none; padding:4px; }
+    .hamburger span { display:block; width:22px; height:2px; background:var(--navy); border-radius:2px; }
+    @media(max-width:768px){ .nav-links,.nav-cta{display:none;} .hamburger{display:flex;} }
+    .page-hero { padding:80px 0 64px; background:var(--cream); border-bottom:1px solid var(--border); }
+    .page-hero .label { margin-bottom:10px; }
+    .page-hero h1 { margin-bottom:16px; color:var(--navy); }
+    .page-hero p.lead { margin-bottom:0; }
+    .accent-line { width:40px; height:3px; background:var(--sage); border-radius:2px; margin-bottom:20px; }
+    .accent-line--gold { background:var(--gold); }
+    .section-header { margin-bottom:60px; }
+    .section-header h2 { margin-bottom:14px; }
+    .section-header p { max-width:520px; }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
+    .two-col--60-40 { grid-template-columns:1.4fr 1fr; }
+    @media(max-width:768px){ .two-col,.two-col--60-40{grid-template-columns:1fr;gap:40px;} }
+    .value-list { list-style:none; display:flex; flex-direction:column; gap:16px; margin-top:32px; }
+    .value-list li { display:flex; gap:14px; align-items:flex-start; }
+    .value-dot { width:8px; height:8px; border-radius:50%; background:var(--sage); flex-shrink:0; margin-top:8px; }
+    .value-list li p { font-size:15px; }
+    .credential-card { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:28px; }
+    .credential-card + .credential-card { margin-top:16px; }
+    .credential-icon { width:40px; height:40px; background:var(--sage-lt); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+    .credential-icon svg { width:20px; height:20px; stroke:var(--sage); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+    .credential-card h4 { margin-bottom:6px; font-size:1.05rem; }
+    .credential-card p { font-size:14px; }
+    .philosophy-block { border-left:3px solid var(--sage); padding-left:24px; margin-bottom:32px; }
+    .philosophy-block p { font-family:var(--serif); font-size:1.2rem; color:var(--navy); line-height:1.6; font-style:italic; }
+    .stat-row { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
+    @media(max-width:600px){ .stat-row{grid-template-columns:1fr;} }
+    .stat-box { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:28px 24px; text-align:center; }
+    .stat-num { font-family:var(--serif); font-size:2.6rem; font-weight:600; color:var(--navy); line-height:1; }
+    .stat-label { font-size:13px; color:var(--muted); margin-top:6px; }
+    footer { background:var(--navy); color:rgba(255,255,255,.7); padding:64px 0 32px; border-top:1px solid rgba(255,255,255,.07); }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:48px; }
+    .footer-logo { font-family:var(--serif); font-size:1.4rem; color:#fff; font-weight:600; margin-bottom:14px; }
+    .footer-logo span { color:var(--sage); }
+    .footer-brand p { font-size:14px; line-height:1.7; }
+    .footer-col h5 { font-family:var(--sans); font-size:12px; font-weight:500; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.4); margin-bottom:16px; }
+    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .footer-col a { font-size:14px; color:rgba(255,255,255,.65); text-decoration:none; transition:color .15s; }
+    .footer-col a:hover { color:#fff; }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.1); padding-top:28px; display:flex; align-items:center; justify-content:space-between; font-size:13px; color:rgba(255,255,255,.4); flex-wrap:wrap; gap:12px; }
+    @media(max-width:768px){ .footer-grid{grid-template-columns:1fr 1fr;} .footer-brand{grid-column:1/-1;} }
+    @media(max-width:480px){ .footer-grid{grid-template-columns:1fr;} }
+    .cta-inner { display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; }
+    .cta-text h2 { color:#fff; margin-bottom:10px; }
+    .cta-text p { color:rgba(255,255,255,.7); max-width:480px; }
+    .cta-btns { display:flex; gap:12px; flex-wrap:wrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VKTlearn<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="tuition.html">Tuition</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-outline" style="padding:10px 20px;font-size:13px;">Schedule a Call</a>
+      <a href="enrollment.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Apply Now</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="label">Our Story</div>
+    <h1>The School We Wished<br><em style="font-style:italic;color:var(--sage);">Had Always Existed</em></h1>
+    <p class="lead" style="margin-top:16px;">VKTlearn was built from a simple conviction: every child deserves a teacher who truly knows them — and a classroom small enough to make that possible.</p>
+  </div>
+</section>
+
+<!-- WHY WE STARTED -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="two-col two-col--60-40">
+      <div>
+        <div class="accent-line"></div>
+        <div class="label">Why We Started</div>
+        <h2>A Teacher's Frustration — and a Better Answer</h2>
+        <p style="margin-top:20px;">After years in Texas public and private classrooms, something became impossible to ignore: the system is built for the middle. Students who learn differently, move faster, or need more time rarely get what they need — not because teachers don't care, but because 30 students in a room makes individualization nearly impossible.</p>
+        <p style="margin-top:16px;">VKTlearn was founded to answer a different question: <em style="font-family:var(--serif);font-size:1.05em;color:var(--navy);">What could school look like if the class was small enough for every child to be truly known?</em></p>
+        <p style="margin-top:16px;">The answer is a microschool — live instruction, eight students maximum, a certified Texas teacher who communicates with your family every week, and a curriculum built around mastery rather than pace.</p>
+      </div>
+      <div>
+        <div class="credential-card">
+          <div class="credential-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <h4>Texas Certified Teacher</h4>
+          <p>State-certified educator with experience across multiple grade levels and learning profiles.</p>
+        </div>
+        <div class="credential-card">
+          <div class="credential-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          </div>
+          <h4>TEKS-Aligned Instruction</h4>
+          <p>Every lesson follows Texas Essential Knowledge and Skills standards — rigorous, relevant, and state-compliant.</p>
+        </div>
+        <div class="credential-card">
+          <div class="credential-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h4>Years of Classroom Experience</h4>
+          <p>Hands-on experience supporting students with diverse learning needs, including general and special education.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="accent-line"></div>
+        <div class="label">Our Philosophy</div>
+        <h2>We Teach Students,<br>Not Subjects</h2>
+
+        <div class="philosophy-block" style="margin-top:28px;">
+          <p>"A child who feels known will go further than one who is simply pushed forward."</p>
+        </div>
+
+        <p>Curriculum matters — but the relationship between a teacher and student matters more. When a child trusts their teacher, knows they won't be embarrassed for asking questions, and feels genuinely cared for, learning accelerates naturally.</p>
+        <p style="margin-top:16px;">That's not idealism — it's what small class sizes make structurally possible.</p>
+
+        <ul class="value-list">
+          <li><div class="value-dot"></div><p><strong style="color:var(--navy);">Mastery over pace.</strong> Students move forward when they're ready, not when the calendar says so.</p></li>
+          <li><div class="value-dot"></div><p><strong style="color:var(--navy);">Communication over assumption.</strong> Parents should never wonder how their child is doing.</p></li>
+          <li><div class="value-dot"></div><p><strong style="color:var(--navy);">Structure with warmth.</strong> Consistent routines paired with genuine care create the safest learning environments.</p></li>
+          <li><div class="value-dot"></div><p><strong style="color:var(--navy);">Honesty about growth.</strong> We celebrate progress and address struggles directly — no sugar-coating, no alarm.</p></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="accent-line accent-line--gold"></div>
+        <div class="label" style="color:var(--gold);">Who We Serve</div>
+        <h2>Families Who Want More</h2>
+        <p style="margin-top:20px;">VKTlearn is the right fit for families who:</p>
+        <ul class="value-list">
+          <li><div class="value-dot"></div><p>Feel their child is getting lost in a large classroom</p></li>
+          <li><div class="value-dot"></div><p>Want live, interactive instruction — not passive video content</p></li>
+          <li><div class="value-dot"></div><p>Need flexibility that traditional schools can't offer</p></li>
+          <li><div class="value-dot"></div><p>Have a child with specific learning needs who requires more support</p></li>
+          <li><div class="value-dot"></div><p>Value direct, honest communication from their child's teacher</p></li>
+          <li><div class="value-dot"></div><p>Want school that genuinely works around their family, not the reverse</p></li>
+        </ul>
+        <div style="margin-top:32px;">
+          <a href="contact.html" class="btn btn-primary">Schedule a Free Call <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section section--sage">
+  <div class="container">
+    <div style="text-align:center;max-width:540px;margin:0 auto 0;">
+      <div class="accent-line" style="margin:0 auto 20px;"></div>
+      <div class="label">By the Numbers</div>
+      <h2>Small by Design</h2>
+      <p>Every number here is intentional — because the size of a class determines what kind of teaching is even possible.</p>
+    </div>
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="stat-num">8</div>
+        <div class="stat-label">Maximum students per live class</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">K–12</div>
+        <div class="stat-label">Grades served across all programs</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">4×</div>
+        <div class="stat-label">Live class days per week (Mon–Thu)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--navy">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <div class="label label--white">Get Started</div>
+        <h2>Meet the Teacher Behind VKTlearn</h2>
+        <p>Schedule a free 20-minute call. No pitch, no pressure — just a real conversation about whether this is the right fit for your child.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-outline-white">Schedule a Call</a>
+        <a href="enrollment.html" class="btn btn-gold">Apply for Enrollment <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">VKTlearn<span>.</span></div>
+        <p>A Texas private microschool offering personalized, live instruction for grades K–12. Built around your child, not the average.</p>
+        <p style="margin-top:12px;font-size:13px;">Texas Certified Teacher · TEKS Aligned · Enrolling Now</p>
+      </div>
+      <div class="footer-col">
+        <h5>School</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="tuition.html">Tuition</a></li>
+          <li><a href="enrollment.html">Enrollment</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Parent Handbook</a></li>
+          <li><a href="#">School Calendar</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:info@VKTlearntx.org">info@VKTlearntx.org</a></li>
+          <li><a href="mailto:admissions@VKTlearntx.org">admissions@VKTlearntx.org</a></li>
+          <li><a href="contact.html">Schedule a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 VKTlearn Learning Academy. All rights reserved.</span>
+      <span>Texas Private School · Serving Texas Families</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const ham=document.querySelector('.hamburger'),links=document.querySelector('.nav-links'),cta=document.querySelector('.nav-cta');
+  if(ham)ham.addEventListener('click',()=>{const o=links.style.display==='flex';links.style.cssText=o?'':'display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--cream);padding:20px 24px;gap:16px;border-bottom:1px solid var(--border);z-index:99';cta.style.cssText=o?'':'display:flex;flex-direction:column;padding:0 24px 20px;position:absolute;top:'+(68+links.querySelectorAll('li').length*44)+'px;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--border);z-index:99';});
+</script>
+</body>
+</html>
